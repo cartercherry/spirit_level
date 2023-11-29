@@ -25,6 +25,7 @@ max_tilt = 20  # display bubble up to  +/- max_tilt degrees (pitch and roll)
 
 i2c=I2C(0, scl=Pin(1), sda=Pin(0))
 mpu=MPU6050(i2c)
+oled = SSD1306_I2C(128, 64, i2c)
 
 def draw_bubble(x: int, y: int, xr: int=5, yr:int=5, color: int=1) -> None:
     '''spirit bubble size on display centered at (x,y)'''
